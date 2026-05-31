@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beat-the-bookie"
+version = "1.0.0"
+description = "Premier League match outcome prediction with hybrid GRU+MLP and a stacking ensemble."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "ScooterStuff" }]
+keywords = ["machine-learning", "deep-learning", "football", "premier-league", "pytorch", "xgboost"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+beat-the-bookie = "beat_the_bookie.pipeline:run_full_training"
