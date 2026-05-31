@@ -17,7 +17,3 @@ keras==3.7.0
 # Visualisation
 matplotlib>=3.7
 seaborn>=0.12
-
-# Notebook
-jupyter
-ipykernel
